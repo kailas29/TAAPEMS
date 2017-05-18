@@ -97,7 +97,7 @@ for (path in paths) {
         } else if (num.cols == 2+174) {
           # there's only 1 case, seems they compared the to PEMS during the same trip
           # select only the first 2+138 columns
-          Track.hotNEDC.results.1 <- rbind(Track.hotNEDC.results.1, test.data[,1:140])
+          Track.hotNEDC.results.2 <- rbind(Track.hotNEDC.results.2, test.data[,1:140])
         } else {
           print('Problem: other number of columns for format Absolute_time')
         }
@@ -127,7 +127,7 @@ for (path in paths) {
         # add data to dataframe (tibble)
         # add a column with the car name and test type
         test.data <- data.frame(car.name = car.name, test.type = 'T-Hot NEDC', test.data)
-        Track.hotNEDC.results.1 <- rbind(Track.hotNEDC.results.1, test.data)
+        Track.hotNEDC.results.3 <- rbind(Track.hotNEDC.results.3, test.data)
         overview.TrackHotNEDC$TrackHotNEDC[overview.TrackHotNEDC$car.name == car.name] <- 1
         
       } # stop reading format 1
@@ -162,7 +162,7 @@ print(overview.TrackHotNEDC)
 length(unique(Track.hotNEDC.results.1$car.name))
 length(unique(Track.hotNEDC.results.2$car.name))
 length(unique(Track.hotNEDC.results.3$car.name))
-
+length(unique(Track.hotNEDC.results.4$car.name))
 # TO DO
 # find corresponding columns in the 2 data formats and combine them in one data.frame
 
